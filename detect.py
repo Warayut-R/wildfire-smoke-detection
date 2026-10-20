@@ -11,7 +11,7 @@ if not os.path.exists(model_path):
 
 print(f"📦 กำลังโหลดโมเดลจาก: {model_path}")
 model = YOLO(model_path)
-
+model.model.names = {0: 'Smoke', 1: 'Fire'}
 # 2. กำหนดโฟลเดอร์รูปภาพและโฟลเดอร์เก็บผลลัพธ์
 IMAGE_DIR = 'datasets/wildfire_data/test/images'
 OUTPUT_DIR = 'runs/detect/predict'
